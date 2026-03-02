@@ -1,0 +1,141 @@
+# 🐍 Python Practice
+
+**100 Python coding questions**
+
+---
+
+## 🔰 **Beginner Level (1–20) – Fundamentals**
+
+1. Reverse a string.
+2. Check if a string is a palindrome.
+3. Count vowels in a string.
+4. Find factorial of a number (iterative + recursive).
+5. Check if a number is prime.
+6. Print Fibonacci sequence up to n terms.
+7. Find the largest number in a list.
+8. Remove duplicates from a list.
+9. Check if two strings are anagrams.
+10. Return the sum of all even numbers in a list.
+11. Capitalize the first letter of every word in a sentence.
+12. Implement your own version of `map()` using loops.
+13. Flatten a nested list.
+14. Check if a dictionary is empty.
+15. Convert a dictionary to a list of key-value tuples.
+16. Find the intersection of two lists.
+17. Count frequency of elements in a list.
+18. Return the longest word in a sentence.
+19. Swap two variables without using a third variable.
+20. Check if a number is Armstrong number.
+
+---
+
+## 🧠 **Intermediate Level (21–50) – Core Python Concepts**
+
+21. Deep copy vs shallow copy — implement both manually.
+22. Implement memoization using decorators.
+23. Group list of dictionaries by a specific key.
+24. Implement your own `reduce()` function.
+25. Write a custom iterator class.
+26. Write a custom generator.
+27. Implement a simple caching decorator.
+28. Implement a singleton class.
+29. Create a class with operator overloading (`__add__`, `__str__`).
+30. Implement a context manager using `__enter__` and `__exit__`.
+31. Implement context manager using `contextlib`.
+32. Write a function to merge two sorted lists.
+33. Implement binary search.
+34. Find the nth largest number in a list.
+35. Return all permutations of a string.
+36. Implement `@staticmethod` and `@classmethod` example.
+37. Convert Roman numerals to integers.
+38. Evaluate a mathematical expression string.
+39. Implement a basic LRU cache using OrderedDict.
+40. Write a retry decorator for functions.
+41. Write a simple logging decorator.
+42. Validate parentheses using stack.
+43. Implement a simple CLI calculator.
+44. Find first non-repeating character in string.
+45. Implement a simple thread-safe counter.
+46. Write a function that times execution of another function.
+47. Implement a basic task scheduler.
+48. Parse and process a CSV file manually.
+49. Implement a simple REST API using Flask (basic CRUD).
+50. Implement a basic file watcher script.
+
+---
+
+## 🔁 **Recursion + Algorithms (51–70)**
+
+51. Generate all balanced parentheses combinations.
+52. Solve Tower of Hanoi.
+53. Find all subsets (power set) of a list.
+54. Implement merge sort.
+55. Implement quick sort.
+56. Recursive binary search.
+57. Find lowest common ancestor in binary tree.
+58. Serialize and deserialize a binary tree.
+59. Solve N-Queens problem.
+60. Count unique paths in a grid (DP).
+61. Longest common prefix among strings.
+62. Implement a Trie data structure.
+63. BFS traversal of a graph.
+64. DFS traversal of a graph.
+65. Detect cycle in a graph.
+66. Check if number is happy number.
+67. Implement Kadane’s Algorithm.
+68. Solve coin change problem.
+69. Longest increasing subsequence.
+70. Topological sort.
+
+---
+
+## 🧰 **Data Structures in Python (71–80)**
+
+71. Implement Stack using list.
+72. Implement Queue using list.
+73. Implement Queue using `collections.deque`.
+74. Build a Linked List class.
+75. Build a Doubly Linked List.
+76. Create a HashMap from scratch.
+77. Implement Binary Search Tree.
+78. Implement Min-Heap.
+79. Create a Priority Queue.
+80. Implement Disjoint Set (Union-Find).
+
+---
+
+## 💡 **Advanced Python (81–90)**
+
+81. Explain closures with examples.
+82. Write your own decorator from scratch.
+83. Implement async/await example using `asyncio`.
+84. Write a retry mechanism using async functions.
+85. Create a simple event loop simulation.
+86. Build a mini ORM-like structure.
+87. Implement your own JSON serializer.
+88. Build a basic templating engine.
+89. Create a reactive observer pattern system.
+90. Implement multiprocessing example with shared state.
+
+---
+
+## 🌐 **System + Real-World (91–95)**
+
+91. Build a basic HTTP server using `http.server`.
+92. Create a web scraper using `requests` + `BeautifulSoup`.
+93. Build a rate limiter.
+94. Create a simple password manager CLI.
+95. Implement a log analyzer script.
+
+---
+
+## 🌍 **Projects / Mini Apps (96–100)**
+
+96. Build a calculator (CLI).
+97. Build a stopwatch/timer.
+98. Create a quiz app with score tracking.
+99. Build a weather app using API.
+100. Create a Markdown previewer CLI.
+
+---
+
