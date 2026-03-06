@@ -29,113 +29,176 @@
 
 ---
 
-## 🧠 **Intermediate Level (21–50) – Core Python Concepts**
+Love this 🔥 — since you're seriously practicing Python & building backend projects, I’ll give you a **structured DSA roadmap** so you can level up properly instead of solving random questions.
 
-21. Deep copy vs shallow copy — implement both manually.
-22. Implement memoization using decorators.
-23. Group list of dictionaries by a specific key.
-24. Implement your own `reduce()` function.
-25. Write a custom iterator class.
-26. Write a custom generator.
-27. Implement a simple caching decorator.
-28. Implement a singleton class.
-29. Create a class with operator overloading (`__add__`, `__str__`).
-30. Implement a context manager using `__enter__` and `__exit__`.
-31. Implement context manager using `contextlib`.
-32. Write a function to merge two sorted lists.
-33. Implement binary search.
-34. Find the nth largest number in a list.
-35. Return all permutations of a string.
-36. Implement `@staticmethod` and `@classmethod` example.
-37. Convert Roman numerals to integers.
-38. Evaluate a mathematical expression string.
-39. Implement a basic LRU cache using OrderedDict.
-40. Write a retry decorator for functions.
-41. Write a simple logging decorator.
-42. Validate parentheses using stack.
-43. Implement a simple CLI calculator.
-44. Find first non-repeating character in string.
-45. Implement a simple thread-safe counter.
-46. Write a function that times execution of another function.
-47. Implement a basic task scheduler.
-48. Parse and process a CSV file manually.
-49. Implement a simple REST API using Flask (basic CRUD).
-50. Implement a basic file watcher script.
+I’ll organize this into levels:
+
+* 🟢 Beginner (Logic + Basic DS)
+* 🟡 Intermediate (Core DSA Patterns)
+* 🔴 Advanced (Interview-Level Thinking)
 
 ---
 
-## 🔁 **Recursion + Algorithms (51–70)**
+# 🟢 Beginner Level (21–40)
 
-51. Generate all balanced parentheses combinations.
-52. Solve Tower of Hanoi.
-53. Find all subsets (power set) of a list.
-54. Implement merge sort.
-55. Implement quick sort.
-56. Recursive binary search.
-57. Find lowest common ancestor in binary tree.
-58. Serialize and deserialize a binary tree.
-59. Solve N-Queens problem.
-60. Count unique paths in a grid (DP).
-61. Longest common prefix among strings.
-62. Implement a Trie data structure.
-63. BFS traversal of a graph.
-64. DFS traversal of a graph.
-65. Detect cycle in a graph.
-66. Check if number is happy number.
-67. Implement Kadane’s Algorithm.
-68. Solve coin change problem.
-69. Longest increasing subsequence.
-70. Topological sort.
+### 🔹 Strings
 
----
+21. Reverse words in a sentence.
+22. Check if two strings are rotations of each other.
+23. Find first non-repeating character in a string.
+24. Count occurrences of each character in a string.
+25. Remove all spaces from a string.
 
-## 🧰 **Data Structures in Python (71–80)**
+### 🔹 Lists / Arrays
 
-71. Implement Stack using list.
-72. Implement Queue using list.
-73. Implement Queue using `collections.deque`.
-74. Build a Linked List class.
-75. Build a Doubly Linked List.
-76. Create a HashMap from scratch.
-77. Implement Binary Search Tree.
-78. Implement Min-Heap.
-79. Create a Priority Queue.
-80. Implement Disjoint Set (Union-Find).
+26. Find second largest element in a list.
+27. Move all zeros to the end of the list.
+28. Rotate a list by k positions.
+29. Merge two sorted lists.
+30. Find missing number in a range 1 to n.
+
+### 🔹 Basic Math / Logic
+
+31. Check if number is a perfect number.
+32. Find GCD and LCM of two numbers.
+33. Convert decimal to binary (without built-in functions).
+34. Check if number is palindrome.
+35. Count digits in a number.
+
+### 🔹 Dictionaries / Sets
+
+36. Find duplicate elements in a list.
+37. Group anagrams together.
+38. Find most frequent element in a list.
+39. Check if two lists have same elements (order doesn’t matter).
+40. Invert a dictionary (swap keys & values).
 
 ---
 
-## 💡 **Advanced Python (81–90)**
-
-81. Explain closures with examples.
-82. Write your own decorator from scratch.
-83. Implement async/await example using `asyncio`.
-84. Write a retry mechanism using async functions.
-85. Create a simple event loop simulation.
-86. Build a mini ORM-like structure.
-87. Implement your own JSON serializer.
-88. Build a basic templating engine.
-89. Create a reactive observer pattern system.
-90. Implement multiprocessing example with shared state.
+# 🟡 Intermediate Level (41–70)
 
 ---
 
-## 🌐 **System + Real-World (91–95)**
+## 🔹 Two Pointer Problems
 
-91. Build a basic HTTP server using `http.server`.
-92. Create a web scraper using `requests` + `BeautifulSoup`.
-93. Build a rate limiter.
-94. Create a simple password manager CLI.
-95. Implement a log analyzer script.
+41. Two sum problem.
+42. Three sum problem.
+43. Container with most water.
+44. Remove duplicates from sorted array.
+45. Valid palindrome (ignore special chars).
+
+---
+
+## 🔹 Sliding Window
+
+46. Maximum sum subarray of size k.
+47. Longest substring without repeating characters.
+48. Minimum window substring.
+49. Longest repeating character replacement.
+50. Find all anagrams in a string.
 
 ---
 
-## 🌍 **Projects / Mini Apps (96–100)**
+## 🔹 Stack
 
-96. Build a calculator (CLI).
-97. Build a stopwatch/timer.
-98. Create a quiz app with score tracking.
-99. Build a weather app using API.
-100. Create a Markdown previewer CLI.
+51. Valid parentheses.
+52. Implement stack using list.
+53. Min stack.
+54. Evaluate postfix expression.
+55. Next greater element.
 
 ---
+
+## 🔹 Queue
+
+56. Implement queue using two stacks.
+57. Generate binary numbers from 1 to n.
+58. First non-repeating character in stream.
+
+---
+
+## 🔹 Recursion & Backtracking
+
+59. Generate all subsets.
+60. Generate all permutations.
+61. Solve N-Queens problem.
+62. Word search in grid.
+63. Combination sum.
+
+---
+
+## 🔹 Binary Search
+
+64. Binary search (recursive + iterative).
+65. Search in rotated sorted array.
+66. Find peak element.
+67. First and last occurrence of element.
+
+---
+
+## 🔹 Linked List
+
+68. Reverse a linked list.
+69. Detect cycle in linked list.
+70. Merge two sorted linked lists.
+
+---
+
+# 🔴 Advanced Level (71–100)
+
+---
+
+## 🔹 Trees
+
+71. Inorder, Preorder, Postorder traversal.
+72. Level order traversal.
+73. Height of binary tree.
+74. Check if binary tree is balanced.
+75. Lowest common ancestor.
+76. Diameter of binary tree.
+77. Validate BST.
+
+---
+
+## 🔹 Heap / Priority Queue
+
+78. Kth largest element.
+79. Merge k sorted lists.
+80. Top k frequent elements.
+
+---
+
+## 🔹 Graphs
+
+81. BFS traversal.
+82. DFS traversal.
+83. Detect cycle in graph.
+84. Number of islands.
+85. Shortest path (Dijkstra).
+86. Topological sort.
+
+---
+
+## 🔹 Dynamic Programming
+
+87. Climbing stairs.
+88. House robber.
+89. Longest increasing subsequence.
+90. Longest common subsequence.
+91. Coin change problem.
+92. 0/1 Knapsack.
+
+---
+
+## 🔹 Advanced Patterns
+
+93. Trapping rain water.
+94. Largest rectangle in histogram.
+95. Median of two sorted arrays.
+96. LRU Cache implementation.
+97. Serialize & deserialize binary tree.
+98. Trie implementation.
+99. Union-Find (Disjoint Set).
+100. Implement your own HashMap.
+
 
