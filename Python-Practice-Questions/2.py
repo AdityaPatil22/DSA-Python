@@ -1,11 +1,9 @@
 #Check if a string is a palindrome.
-str = "abbase"
-revStr = ""
+def isPalindrome(str):
+    revStr = ""
+    for i in str[::-1]:
+        revStr += i
+    return revStr == str
 
-for i in str[::-1]:
-    revStr += i
 
-if str == revStr:
-    print("True")
-else:
-    print("false")
+print(isPalindrome("abba"))
