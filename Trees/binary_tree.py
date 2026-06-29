@@ -70,12 +70,27 @@ root.right.right = TreeNode(6)
 
 # DFS Traversals (Recursive)
 # Preorder (Node → Left → Right)
+# Using recursion
 def preorder(node):
     if node is None:
         return
     print(node.val)      # Visit node
     preorder(node.left)
     preorder(node.right)
+
+# without recursion
+def preorder_iterative(root):
+    if root is None:
+        return
+    stack = [root]
+
+    while stack:
+        node = stack.pop()
+        print(node.val)  # Visit node
+        if node.right:
+            stack.append(node.right)  # Right child is pushed first so that left is processed first
+        if node.left:
+            stack.append(node.left)
 
 
 # Inorder (Left → Node → Right)
@@ -86,6 +101,18 @@ def inorder(node):
     print(node.val)
     inorder(node.right)
 
+# Inorder Iterative
+def inorder_iterative(root):
+    stack = []
+    curr = root
+    while stack or curr:
+        while curr:
+            stack.append(curr)
+            curr = curr.left
+        curr = stack.pop()
+        print(curr.val)  # Visit node
+        curr = curr.right
+
 
 # Postorder (Left → Right → Node)
 def postorder(node):
@@ -94,6 +121,25 @@ def postorder(node):
     postorder(node.left)
     postorder(node.right)
     print(node.val)
+
+# Postorder Iterative
+def postorder_iterative(root):
+    if root is None:
+        return
+    stack1 = [root]
+    stack2 = []
+    while stack1:
+        node = stack1.pop()
+        stack2.append(node)
+        if node.left:
+            stack1.append(node.left)
+        if node.right:
+            stack1.append(node.right)
+    while stack2:
+        node = stack2.pop()
+        print(node.val)  # Visit node
+
+
 
 
 # DFS Traversals (Iterative)
