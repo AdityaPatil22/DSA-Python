@@ -25,7 +25,7 @@ Terminology:
 Properties:
     - A binary tree can be empty (no nodes).
     - Each node can have 0, 1, or 2 children.
-    - The left child is always less than the parent node, and the right child is always greater than the parent node in a Binary Search Tree (BST).
+    - Only in a Binary Search Tree (BST) are all values in the left subtree less than the node's value, and all values in the right subtree greater. A general binary tree has no such ordering.
 
 Operations:
     - Insertion: Adding a new node to the tree.
@@ -67,6 +67,11 @@ root.left.left = TreeNode(4)
 root.left.right = TreeNode(5)
 root.right.right = TreeNode(6)
 
+# ⭐️ Points
+
+# For Inorder, we do something between left and right.
+# For Preorder, we do something before left and right.
+# For Postorder, we do something after left and right.
 
 # DFS Traversals (Recursive)
 # Preorder (Node → Left → Right)
@@ -214,3 +219,52 @@ def search_bst(root, val):
     if val < root.val:
         return search_bst(root.left, val)
     return search_bst(root.right, val)
+
+
+# Level oorder Traversal (BFS)
+from collections import deque
+from typing import List, Optional
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root:
+            return []
+
+        result = []
+        queue = deque([root])
+
+        while queue:
+            level = []
+
+            # Number of nodes in current level
+            for _ in range(len(queue)):
+                node = queue.popleft()
+                level.append(node.val)
+
+                if node.left:
+                    queue.append(node.left)
+
+                if node.right:
+                    queue.append(node.right)
+
+            result.append(level)
+
+        return result
+    
+
+# Height of a binary tree
+def get_height(node):
+    if node is None:
+        return -1  # Returns 0 if you want to count nodes instead of edges
+    
+    left_height = get_height(node.left)
+    right_height = get_height(node.right)
+    
+    return 1 + max(left_height, right_height)

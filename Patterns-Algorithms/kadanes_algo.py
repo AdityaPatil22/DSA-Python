@@ -19,3 +19,15 @@ def kadanes_algorithm(arr):
         max_sum = max(max_sum, current_sum)
 
     return max_sum
+
+def kadanes_algorithm(nums):
+    max_sum = float('-inf')
+    curr = 0
+    for num in nums:
+        curr += num    
+        if curr > max_sum:
+            max_sum = curr
+                
+        if curr < 0:
+            curr = 0
+    return max_sum

@@ -4,6 +4,18 @@ Basic structure of Recursion
       if base_case:
           return result  # Stop recursion
       return recursive_function(smaller_problem)
+
+Template:
+def solve(input):
+
+    if base_case:
+        return
+
+    do_something()
+
+    solve(smaller_input)
+
+    undo_if_needed()
 """
 
 
