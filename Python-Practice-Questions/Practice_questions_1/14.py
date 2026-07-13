@@ -1,1 +1,0 @@
-# Check if a dictionary is empty.

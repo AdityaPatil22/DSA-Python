@@ -68,68 +68,99 @@ root.left.right = TreeNode(5)
 root.right.right = TreeNode(6)
 
 # ⭐️ Points
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
-# For Inorder, we do something between left and right.
-# For Preorder, we do something before left and right.
-# For Postorder, we do something after left and right.
 
-# DFS Traversals (Recursive)
-# Preorder (Node → Left → Right)
-# Using recursion
-def preorder(node):
+
+"""
+DFS Traversal Rules (Must Memorize)
+            Root
+           /    \
+        Left   Right
+
+Preorder  = Before children
+Inorder   = Between children
+Postorder = After children
+
+| Traversal | Order               | Common Uses                   |
+| --------- | ------------------- | ----------------------------- |
+| Preorder  | Root → Left → Right | Copy tree, serialize          |
+| Inorder   | Left → Root → Right | BST problems                  |
+| Postorder | Left → Right → Root | Delete tree, height, diameter |
+"""
+
+# Universal Recursive DFS Template
+def dfs(node):
     if node is None:
         return
-    print(node.val)      # Visit node
+    # Do something
+    dfs(node.left)
+    dfs(node.right)
+    # Maybe do something here
+
+# Preorder Traversal
+# Recursive
+def preorder(node):
+    if not node:
+        return
+    print(node.val)
     preorder(node.left)
     preorder(node.right)
 
-# without recursion
-def preorder_iterative(root):
-    if root is None:
+# Iterative 
+def preorder(root):
+    if not root:
         return
     stack = [root]
-
     while stack:
         node = stack.pop()
-        print(node.val)  # Visit node
+        print(node.val)
         if node.right:
-            stack.append(node.right)  # Right child is pushed first so that left is processed first
+            stack.append(node.right)
         if node.left:
             stack.append(node.left)
 
-
-# Inorder (Left → Node → Right)
+# Inorder Traversal
+# Recursive
 def inorder(node):
-    if node is None:
+    if not node:
         return
     inorder(node.left)
     print(node.val)
     inorder(node.right)
 
-# Inorder Iterative
-def inorder_iterative(root):
+# Iterative
+def inorder(root):
     stack = []
     curr = root
-    while stack or curr:
+
+    while curr or stack:
+
         while curr:
             stack.append(curr)
             curr = curr.left
+
         curr = stack.pop()
-        print(curr.val)  # Visit node
+        print(curr.val)
         curr = curr.right
 
-
-# Postorder (Left → Right → Node)
+# Postorder Traversal
+# Recursive
 def postorder(node):
-    if node is None:
+    if not node:
         return
+
     postorder(node.left)
     postorder(node.right)
     print(node.val)
 
-# Postorder Iterative
-def postorder_iterative(root):
-    if root is None:
+# Iterative
+def postorder(root):
+    if not root:
         return
     stack1 = [root]
     stack2 = []
@@ -141,45 +172,15 @@ def postorder_iterative(root):
         if node.right:
             stack1.append(node.right)
     while stack2:
-        node = stack2.pop()
-        print(node.val)  # Visit node
+        print(stack2.pop().val)
 
+    
+# Breadth First Search (Level Order)
+from collections import deque
 
-
-
-# DFS Traversals (Iterative)
-# Preorder Iterative
-def preorder_iterative(root):
-    if root is None:
-        return
-    stack = [root]
-    while stack:
-        node = stack.pop()
-        print(node.val)
-        if node.right:
-            stack.append(node.right)
-        if node.left:
-            stack.append(node.left)
-
-
-# Inorder Iterative
-def inorder_iterative(root):
-    stack = []
-    curr = root
-    while stack or curr:
-        while curr:
-            stack.append(curr)
-            curr = curr.left
-        curr = stack.pop()
-        print(curr.val)
-        curr = curr.right
-
-
-# BFS Traversal
 def bfs(root):
-    if root is None:
+    if not root:
         return
-    from collections import deque
     queue = deque([root])
     while queue:
         node = queue.popleft()
@@ -189,82 +190,37 @@ def bfs(root):
         if node.right:
             queue.append(node.right)
 
-
-# Common Utility Patterns
-
-# Max Depth
-def max_depth(root):
-    if root is None:
-        return 0
-    return 1 + max(max_depth(root.left), max_depth(root.right))
-
-
-# Min Depth
-def min_depth(root):
-    if root is None:
-        return 0
-    if root.left is None:
-        return 1 + min_depth(root.right)
-    if root.right is None:
-        return 1 + min_depth(root.left)
-    return 1 + min(min_depth(root.left), min_depth(root.right))
-
-
-# Search in BST
-def search_bst(root, val):
-    if root is None:
-        return None
-    if root.val == val:
-        return root
-    if val < root.val:
-        return search_bst(root.left, val)
-    return search_bst(root.right, val)
-
-
-# Level oorder Traversal (BFS)
+# Level Order Traversal Pattern
 from collections import deque
-from typing import List, Optional
 
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+def level_order(root):
+    if not root:
+        return []
+    result = []
+    queue = deque([root])
+    while queue:
+        level = []
+        for _ in range(len(queue)):
+            node = queue.popleft()
+            level.append(node.val)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        result.append(level)
+    return result
 
-class Solution:
-    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        if not root:
-            return []
+# Height / Max Depth
+def maxDepth(root):
+    if not root:
+        return 0
+    return 1 + max(
+        maxDepth(root.left),
+        maxDepth(root.right)
+    )
 
-        result = []
-        queue = deque([root])
-
-        while queue:
-            level = []
-
-            # Number of nodes in current level
-            for _ in range(len(queue)):
-                node = queue.popleft()
-                level.append(node.val)
-
-                if node.left:
-                    queue.append(node.left)
-
-                if node.right:
-                    queue.append(node.right)
-
-            result.append(level)
-
-        return result
-    
-
-# Height of a binary tree
-def get_height(node):
-    if node is None:
-        return -1  # Returns 0 if you want to count nodes instead of edges
-    
-    left_height = get_height(node.left)
-    right_height = get_height(node.right)
-    
-    return 1 + max(left_height, right_height)
+# Count Nodes
+def count(root):
+    if not root:
+        return 0
+    return 1 + count(root.left) + count(root.right)

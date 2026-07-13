@@ -1,1 +1,0 @@
-# Bellman-Ford algorithm implementation

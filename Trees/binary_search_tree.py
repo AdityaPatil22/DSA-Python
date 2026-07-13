@@ -12,15 +12,6 @@ A Binary Search Tree is a binary tree with an ordering property
      / \   /
     4   7 13
 """
-
-
-class TreeNode:
-    def __init__(self, val):
-        self.val = val
-        self.left = None
-        self.right = None
-
-
 class BST:
     def __init__(self):
         self.root = None
@@ -36,6 +27,16 @@ def inorder(node):
     print(node.val)
     inorder(node.right)
 
+# Search in BST
+def search_bst(root, val):
+    if root is None:
+        return None
+    if root.val == val:
+        return root
+    if val < root.val:
+        return search_bst(root.left, val)
+    return search_bst(root.right, val)
+
 
 # Insert into BST
 def insert_into_bst(root, val):
@@ -46,17 +47,6 @@ def insert_into_bst(root, val):
     elif val > root.val:
         root.right = insert_into_bst(root.right, val)
     return root
-
-
-# Search in BST
-def search_bst(root, val):
-    if root is None:
-        return None
-    if root.val == val:
-        return root
-    if val < root.val:
-        return search_bst(root.left, val)
-    return search_bst(root.right, val)
 
 
 # Find Minimum & Maximum
@@ -72,6 +62,7 @@ def find_max(root):
     return root.val
 
 
+# Delete a Node
 def delete_node(root, key):
     if root is None:
         return None
