@@ -24,6 +24,13 @@ for j in range(len(arr[0])):
     for i in range(len(arr)):
         print(arr[i][j])
 
+# Diagonal Traversal
+for d in range(len(arr) + len(arr[0]) - 1):
+    for i in range(len(arr)):
+        j = d - i
+        if 0 <= j < len(arr[0]):
+            print(arr[i][j])
+
 # Flattening a 2D array
 flat_array = [item for sublist in arr for item in sublist]  # [1, 2, 3, 4, 5, 6, 7, 8, 9]
 

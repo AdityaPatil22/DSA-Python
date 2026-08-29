@@ -1,2 +1,0 @@
-# DSA-Python - No external dependencies required for core implementations
-# Python 3.7+ recommended

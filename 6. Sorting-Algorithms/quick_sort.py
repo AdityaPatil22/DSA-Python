@@ -33,3 +33,4 @@ def partition(arr, low, high):
 
     arr[i + 1], arr[high] = arr[high], arr[i + 1]  # swap pivot
     return i + 1
+
