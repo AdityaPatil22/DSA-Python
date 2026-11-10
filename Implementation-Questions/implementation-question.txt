@@ -1,0 +1,109 @@
+# 50 Python Implementation Challenges
+
+**Level:** Intermediate to Advanced  
+**Focus:** Python Backend Engineering, API Integration, Asyncio, Concurrency, FastAPI and Distributed Systems.
+
+## 1. API Integration & HTTP Clients
+
+1. **Build an Async API Client** — Create an HTTP client using `httpx.AsyncClient`. Support GET, POST, PUT, DELETE, headers and query parameters.
+2. **Implement Retry Mechanism** — Retry failed API requests using exponential backoff. Handle 429, 500, 502, 503 and connection timeouts.
+3. **API Rate Limiter** — Implement a client that allows only 10 requests per second. Queue excess requests instead of dropping them.
+4. **Paginated API Fetcher** — Fetch all records from an API supporting page-based and cursor-based pagination.
+5. **Concurrent API Aggregator** — Call five independent APIs concurrently and combine their responses into one JSON object.
+6. **API Response Cache** — Cache API responses using URL and query parameters as keys. Implement TTL-based expiration.
+7. **API Circuit Breaker** — Implement CLOSED, OPEN and HALF-OPEN states. Stop calling an API when failures exceed a threshold.
+8. **API Request Deduplication** — If multiple coroutines request the same resource simultaneously, execute only one API call and share its result.
+9. **API Client with Authentication** — Implement OAuth2 token handling, automatic token refresh and retry after 401 responses.
+10. **Build a Webhook Receiver** — Create a FastAPI webhook endpoint that validates signatures, handles duplicate events and processes events asynchronously.
+
+## 2. Asyncio & Concurrency
+
+11. **Concurrent URL Scraper** — Fetch 100 URLs concurrently using `asyncio.gather()`. Limit concurrency to 10 requests.
+12. **Async Task Scheduler** — Build a scheduler that executes tasks at specified intervals without blocking the event loop.
+13. **Producer-Consumer System** — Implement multiple producers and consumers using `asyncio.Queue`. Handle graceful shutdown.
+14. **Async Task Timeout Manager** — Execute multiple tasks with individual timeouts. Cancel tasks that exceed their deadlines.
+15. **Async Semaphore Manager** — Build a system that allows a maximum of N concurrent operations using `asyncio.Semaphore`.
+16. **Task Cancellation** — Implement a long-running async service that supports graceful cancellation using `asyncio.CancelledError`.
+17. **Async Background Worker** — Build a worker that continuously consumes jobs from a queue, retries failures and supports shutdown.
+18. **Async Task Dependency Manager** — Execute tasks concurrently while respecting dependencies. A task should execute only after its dependencies finish.
+19. **Async Resource Pool** — Implement a connection/resource pool with a maximum number of connections and automatic release.
+20. **Async Pipeline Processor** — Build a pipeline with three stages: fetching data, transforming data and storing results. Each stage should run concurrently.
+
+## 3. Advanced Python Programming
+
+21. **Custom Retry Decorator** — Implement `@retry(max_attempts=3, delay=2)` supporting both synchronous and asynchronous functions.
+22. **Execution Time Decorator** — Create a decorator that measures execution time and works with normal and async functions.
+23. **Custom Context Manager** — Implement a context manager for managing database connections. Ensure cleanup happens even when exceptions occur.
+24. **Custom Iterator** — Build a paginated iterator that fetches data lazily from an API using `__iter__()` and `__next__()`.
+25. **Generator-Based File Processor** — Process a 10 GB CSV file without loading the entire file into memory.
+26. **Custom Descriptor** — Implement a descriptor that validates attribute types whenever an object property is assigned.
+27. **Thread-Safe Singleton** — Implement a singleton class that remains safe when accessed from multiple threads.
+28. **Custom Event System** — Build an event emitter supporting subscribe, unsubscribe and event publishing. Support async listeners.
+29. **Plugin Architecture** — Build a Python plugin system that dynamically discovers and loads plugins using `importlib`.
+30. **Custom LRU Cache** — Implement an LRU cache with O(1) lookup, insertion and eviction.
+
+## 4. Multithreading, Multiprocessing & Performance
+
+31. **Thread Pool Downloader** — Download 100 files using `ThreadPoolExecutor`. Limit concurrent downloads and handle failures.
+32. **CPU-Bound Task Processor** — Process a large dataset using `ProcessPoolExecutor`. Compare execution time against sequential execution.
+33. **Thread-Safe Counter** — Implement a shared counter accessed by 20 threads. Ensure no updates are lost.
+34. **Producer-Consumer with Threads** — Implement a bounded queue using `threading.Condition` and multiple producers/consumers.
+35. **Parallel File Processor** — Read multiple large files concurrently, process their contents and merge the results.
+36. **Deadlock Detection** — Create a program involving multiple locks that can deadlock. Then implement a solution to prevent it.
+37. **CPU vs I/O Benchmark** — Implement the same workload using sequential execution, threads, multiprocessing and asyncio. Benchmark all four.
+
+## 5. FastAPI & Backend Engineering
+
+38. **Async Job Processing API** — Build an API where users submit long-running jobs. Return a job ID and expose an endpoint to check job status.
+39. **API Middleware** — Implement middleware for request logging, execution time, request IDs and error tracking.
+40. **Dependency Injection System** — Build reusable FastAPI dependencies for database sessions, authentication and configuration.
+41. **WebSocket Notification Service** — Build a WebSocket server that broadcasts real-time job status updates to connected clients.
+42. **API Authentication System** — Implement JWT authentication, refresh tokens, token expiration and role-based access control.
+43. **Database Connection Manager** — Implement an async SQLAlchemy connection/session manager with proper lifecycle handling.
+44. **API Versioning & Validation** — Build `/v1` and `/v2` endpoints with different Pydantic schemas and backward compatibility.
+
+## 6. Production-Grade Python Systems
+
+45. **Distributed Rate Limiter** — Implement a rate limiter using Redis. Support multiple API workers sharing the same rate limit.
+46. **Task Queue Implementation** — Build a lightweight task queue using Redis. Support workers, retries, delayed jobs and failure handling.
+47. **Async Database Repository** — Build a repository pattern using async SQLAlchemy. Implement transactions, rollback and connection management.
+48. **Log Processing Engine** — Build a streaming log processor that reads logs, filters events, aggregates metrics and writes results.
+49. **Mini Workflow Engine** — Build an engine that executes dependent tasks, handles failures, supports retries and persists execution state.
+50. **Async MCP Client Manager** — Implement a manager that connects to multiple MCP servers concurrently, discovers tools, invokes them and handles connection failures, timeouts and reconnections.
+
+---
+
+## Implementation Guidelines
+
+For every challenge:
+
+1. **Understand:** Explain the underlying concept and where it is useful.
+2. **Implement:** Write the solution without copying existing implementations.
+3. **Error Handling:** Handle exceptions, timeouts, cancellation and invalid inputs.
+4. **Testing:** Write unit tests using `pytest` and `pytest-asyncio`.
+5. **Performance:** Evaluate execution time, memory usage and scalability.
+6. **Refactoring:** Make the implementation reusable and production-ready.
+
+## Additional Considerations
+
+Try answering these questions for every implementation:
+
+- What happens if 1,000 requests arrive simultaneously?
+- What happens if an external API becomes unavailable?
+- What happens if a task gets cancelled midway?
+- What happens if two workers process the same job?
+- How do you prevent memory leaks?
+- How would you test this without depending on external services?
+
+## Suggested Learning Order
+
+| Phase | Topics | Challenges |
+|---|---|---|
+| 1 | API Integration | 1–10 |
+| 2 | Asyncio & Concurrency | 11–20 |
+| 3 | Advanced Python | 21–30 |
+| 4 | Threads & Performance | 31–37 |
+| 5 | FastAPI | 38–44 |
+| 6 | Production Systems | 45–50 |
+
+**Goal:** Complete all 50 challenges with working implementations, tests, proper error handling and documentation.
